@@ -1,3 +1,5 @@
+const cont = document.getElementById("contenido");
+
 let nb = "Daniel";
 let edad = 21;
 
