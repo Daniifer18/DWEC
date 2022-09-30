@@ -17,5 +17,5 @@ for (let i = 0; i < 11; i++) {
 let arr = ["d","a","n","i","e","l"];
 let arr1 = ["daniel"];
 
-console.log(arr[0].substring(2,3));
-console.log(arr2[0].substring(2,3));
+console.log(arr[2]);
+console.log(arr1[0].substring(2,3));
