@@ -11,7 +11,7 @@ const pi = 3.14;
 let radio = prompt("Introduzca el radio de la circunferencia");
 alert("El area de la circunferencia es "+ pi*(radio*radio));
 
-document.body.innerHTML += "<p><br>El area de la circunferencia es"+pi*(radio*radio)+"</p>";
+document.body.innerHTML += "<p><br>El area de la circunferencia es"+pi*(radio*radio)+" cenímetros cuadrados</p>";
 
 /*3.*/ 
 var array = [];
@@ -21,7 +21,7 @@ for(let i = 0;i < array.length; i++){
     array[i] = prompt("Introduzca la edad de la "+(i+1)+" persona");
 }
 
-let suma = ((array[0]+array[3])+array[1]*array[2]);
+let suma = (array[0]+array[3]+array[1]*array[2]);
 
 alert("La suma total es "+ suma);
 
@@ -31,7 +31,7 @@ document.body.innerHTML += "<p><br>La suma total es "+suma+"</p>";
 let cuadrado = prompt("Introduzca el lado del cuadrado");
 alert("El perimetro del cuadrado es "+ 4*cuadrado);
 
-document.body.innerHTML += "<p><br>El perimetro del lado es "+4*cuadrado+"</p>";
+document.body.innerHTML += "<p><br>El perimetro del lado es "+4*cuadrado+" centímetros</p>";
 
 /*5*/
 let precio = prompt("Introduzca el precio del producto");
@@ -39,10 +39,12 @@ let cantidad = prompt("Introduzca la cantidad que quiere del producto");
 let total = precio*cantidad;
 
 let abonar = prompt("Tiene que abonar "+ total);
+
+
 if(abonar < total){
     alert("Te falta dinero rata");
 }else{
     alert("Su cambio es de "+ abonar - total+" euros");
 }
 
-
+document.body.innerHTML += "<p><br>Has abonado "+abonar+" euros </p>";
