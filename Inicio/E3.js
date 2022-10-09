@@ -21,7 +21,7 @@ for(let i = 0;i < array.length; i++){
     array[i] = prompt("Introduzca la edad de la "+(i+1)+" persona");
 }
 
-let suma = (array[0]+array[3]+array[1]*array[2]);
+let suma = (parseInt(array[0])+parseInt(array[3])+parseInt(array[1])*parseInt(array[2]));
 
 alert("La suma total es "+ suma);
 
