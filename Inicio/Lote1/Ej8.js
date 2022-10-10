@@ -15,23 +15,26 @@ function pintar(arr1,arr2){
     var p =`
     <table>
          <tr>
-            <td>C</td>
-            <td>F</td>
+            <th>C</th>
+            <th>F</th>
         </tr>
     `
-    for (let i = 0; i <table 10; i++) {
+    for (let i = 0; i < 10; i++) {
         p +=`<tr>    
             <td>`+ arr1[i]+`</td>
             <td>`+arr2[i]+`</td>
         </tr>`
     }
     p+=`</table>`
+
+    return p
 }
 
+let tipo;
 for(let i = 0;i < 10;i++){
     do{
-        let tipo = prompt("Introduzca el tipo de conversion que desee (C/F)").toLowerCase();
-    }while(tipo.toLowerCase() != 'c' || tipo.toLowerCase() != 'f');
+        tipo = prompt("Introduzca el tipo de conversion que desee (C/F)").toLowerCase();
+    }while(tipo.toLowerCase() != "c" && tipo.toLowerCase() != "f");
     let num = parseInt(prompt("Introduzca el numero "+(i+1)));
     if (tipo.toLocaleLowerCase() == 'c') {
         arr1[i] = num;
