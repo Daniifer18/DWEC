@@ -19,7 +19,7 @@ function pintar(arr1,arr2){
             <th>F</th>
         </tr>
     `
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0;i < arr1.length; i++) {
         p +=`<tr>    
             <td>`+arr1[i]+`</td>
             <td>`+arr2[i]+`</td>
