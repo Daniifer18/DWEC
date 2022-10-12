@@ -36,7 +36,7 @@ for(let i = 0;i < 10;i++){
         tipo = prompt("Introduzca el tipo de conversion que desee (C/F)").toLowerCase();
     }while(tipo.toLowerCase() != "c" && tipo.toLowerCase() != "f");
     let num = parseInt(prompt("Introduzca el numero "+(i+1)));
-    if (tipo.toLocaleLowerCase() == 'c') {
+    if (tipo.toLowerCase() == 'c') {
         arr1[i] = num;
         arr2[i] = convertirAC(num);
     }else{
