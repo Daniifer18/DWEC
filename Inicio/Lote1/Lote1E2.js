@@ -9,4 +9,4 @@ while(num < 0 || num > 9999){
     num = prompt("Introduzca el numero");
 }
 
-document.write("El numero "+num+" tiene "+num.length+" cifras<br>");
+document.write("<h3>El numero "+num+" tiene "+num.length+" cifras</h3><br>");

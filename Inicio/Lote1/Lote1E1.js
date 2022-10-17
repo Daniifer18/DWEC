@@ -10,4 +10,4 @@ for (let i = 0; i < arr.length; i++) {
 
 arr.sort((a,b) => b-a);
 
-document.write(arr[0]+","+arr[1]+","+arr[2]+"<br>");
+document.write("<h3>"+arr[0]+","+arr[1]+","+arr[2]+"</h3><br>");

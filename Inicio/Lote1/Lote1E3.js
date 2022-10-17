@@ -6,9 +6,11 @@ while(parseInt(n) < 0 || parseInt(n) > 9999){
     n = parseInt(prompt("Introduzca el numero"));
 }
 
+var numViejo = n;
+
 function numeroAlReves(n) {
   const nFinal = n.toString().split("").reverse().join("");
   return Number(nFinal);
 }
 
-document.write("El numero al reves es: "+numeroAlReves(n)+"<br>");
+document.write("<h3>El numero "+numViejo+" al reves es: "+numeroAlReves(n)+"</h3><br>");

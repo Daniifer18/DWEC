@@ -9,15 +9,15 @@ while(parseInt(capi) < 0 || parseInt(capi) > 9999){
 
 let valido = true;
 for(let i = 0;i < capi.length/2 && valido;i++){
-    if (capi[i] == capi.length-1-i) {
+    if (capi[i] == (capi.length-1-i)) {
         valido = true;
     }else{
         valido = false;
     }
 }
 
-if(!valido){
-    document.write("Es capicua");
+if(valido){
+    document.write("<h3>El numero "+capi+" es capicua</h3>");
 }else{
-    document.write("No es capicua");
+    document.write("<h3>El numero "+capi+" no es capicua</h3>");
 }
