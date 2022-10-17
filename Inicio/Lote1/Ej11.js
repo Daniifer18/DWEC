@@ -11,7 +11,7 @@ let numMaquina = random(0,100);
 let valorVariable = 0;
 let numIntentos = 0;
 
-valorVariableMin = numMaquina;
+valorVariable = numMaquina;
 
 while(numMaquina != numSecreto){
     if(numMaquina > numSecreto){
@@ -25,5 +25,6 @@ while(numMaquina != numSecreto){
     }
     numIntentos++;
 }
+
 
 document.write("<h1>La maquina encontró el número secreto ("+numSecreto+") en "+numIntentos+" intentos</h1>");
