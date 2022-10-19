@@ -1,4 +1,4 @@
-var anioNuevo = new Date(2023,03,19);
+var anioNuevo = new Date(2022,12-1,31);
 
 var diaHoy = new Date();
 var seg = anioNuevo.getTime() - diaHoy.getTime();
@@ -16,7 +16,7 @@ function pasarADias(seg){
     var min = Math.floor(((seg % 86400) % 3600) / 60);
     var sec = ((seg % 86400) % 3600) % 60;
  
-    return "<h3>"+(dias-31) + " dias " + horas + " horas " + min + " minutos " + sec + " segundos</h3>";
+    return "<h3>"+(dias) + " dias " + horas + " horas " + min + " minutos " + seg + " segundos</h3>";
 }
 
 var diasTranscurridos = pasarADias(SegundosEntreFechas);
