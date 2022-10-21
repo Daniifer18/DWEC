@@ -14,7 +14,7 @@ function pasarADias(seg){
     var dias = Math.floor(seg / 86400);
     var horas = Math.floor((seg % 86400) / 3600);
     var min = Math.floor(((seg % 86400) % 3600) / 60);
-    var sec = ((seg % 86400) % 3600) % 60;
+    var seg = ((seg % 86400) % 3600) % 60;
  
     return "<h3>"+(dias) + " dias " + horas + " horas " + min + " minutos " + seg + " segundos</h3>";
 }
