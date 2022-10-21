@@ -1,31 +1,7 @@
-var arr1 = ["java","Hola","javaScript","esternocleidomastoideo"];
-var arr2 = ["JAva","Pepe","JavaScript","nosequeponeraqui"];
-var arrFinal = [];
+var arr1 = ["javaScript","javaScript"];
+var arr2 = ["java","JavaScript"];
+var arr3 = ["javaScript","java"];
 
-function compararCadenas(arr1,arr2,arrFinal){
-    var valido = true
-
-    for (let i = 0; i < arr1.length; i++) {
-
-        if (arr1[i].includes(arr2[i])) {
-            valido[i] = true
-        }else{
-            valido[i] = false;
-        }
-    
-        arrFinal[i] = arr1[i].toLowerCase()+" , "+arr2[i].toLowerCase()+" devuelve: "+valido;
-    }
-}
-
-compararCadenas(arr1,arr2,arrFinal);
-
-function visualzarArray(arrFinal){
-    var p;
-    for(let i = 0;i < arrFinal.length;i++){
-        p +=`<h3>`+
-            arrFinal[i]
-        +`</h3>`
-    }
-    return p;
-}
-document.write(visualzarArray(arrFinal));
+document.write(`<h3>La palabra "${arr1[0]}" ${arr1[1].includes(arr1[0]) ? 'esta' : 'no esta'} en la oracion</h3>`);
+document.write(`<h3>La palabra "${arr2[0]}" ${arr2[1].includes(arr2[0]) ? 'esta' : 'no esta'} en la oracion</h3>`);
+document.write(`<h3>La palabra "${arr3[0]}" ${arr3[1].includes(arr3[0]) ? 'esta' : 'no esta'} en la oracion</h3>`);
