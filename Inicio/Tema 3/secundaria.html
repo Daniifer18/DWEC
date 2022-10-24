@@ -7,7 +7,21 @@
 	<title>Secundaria</title>
 </head>
 <body>
-	<h1> ventana secundaria</h1><br>	
+	<main>
+        <label for="url">Introduzca su url</label>
+
+        <input type="text" id="url" name="url">
+
+        <br>
+        
+        <button onclick="abrirURL()">Abrir</button>
+
+        <div id="cerrar"></div>
+        
+    </main>
+
+	
+	<!--	<h1> ventana secundaria</h1><br>	
 	<p id="idDestino"> ----------- destinos ---------- </p>	
 	<div id="texto">
 		Aquí aparecera el texto que escribas en el cuadro de texto de la otra pestaña
@@ -17,6 +31,21 @@
 		let contenido = window.opener.todosLados;
 		console.log(contenido)
 	
+	</script>-->
+		<script>
+
+		function abrirURL (){
+		let url = document.getElementById("url");
+		let w = window.open("", "Comunicacion de ventanas", "width=600, height=500")
+
+		w.document.write(url.value)
+		
+		let cerrar = document.getElementById("cerrar")
+		
+			setTimeout(()=>
+			w.close(),3000);
+
+		}
 	</script>	
 </body>
 </html>

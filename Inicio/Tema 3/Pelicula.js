@@ -13,6 +13,21 @@ do {
 var tituloSinEspacios = titulo.replaceAll(" ","");
 console.log(tituloSinEspacios);
 
-document.write("<h3>A. Titulo: "+titulo+" , y su longitud es de :"+tituloSinEspacios.length+" caracteres</h3>");
-document.write("<h3>B. Autor: "+autor+" mayusculas y minusculas :"+autor.toUpperCase()+" , "+autor.toLowerCase()+" , "+autor.trim().length+" caracteres</h3>");
-document.write("<h3>c. Año: "+annio+"</h3>");
+var cadena=`
+<table>
+    <tr>
+        <th></th><th>Normal</th><th>Mayusculas</th><th>Minusculas</th><th>Longitud(caracteres)</th>
+    </tr>
+    <tr>
+        <td>A.Titulo</td><td>`+titulo+`</td><td>`+titulo.toUpperCase()+`</td><td>`+titulo.toLowerCase()+`</td><td>`+tituloSinEspacios.length+`</td>
+    </tr>
+    <tr>
+        <td>B.Autor</td><td>`+autor+`</td><td>`+autor.toUpperCase()+`</td><td>`+autor.toLowerCase()+`</td><td>`+autor.trim().length+`</td>
+    </tr>
+    <tr>
+        <td>C.Año produccion</td><td colspan = "4">`+annio+`</td>
+    </tr>
+</table>`
+
+
+document.write(cadena);
