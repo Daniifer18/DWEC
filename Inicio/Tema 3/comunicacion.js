@@ -8,14 +8,18 @@ function abrirVentana(){
 
     vs.onload=function(){
 
-        vs.document.getElementById("texto").innerHTML="no nos gusta";
+        vs.getUrl(url);
+        window.getUrl = (url) => {
+			console.log('funciona');
+			texto.innerHTML = `${url}`;
+		}
     }
     
     todosLados="no nos gusta tampoco";
     
     // Cerrar Venta pasados un 3 segundos
-    //setTimeout(cerrarVentana,3000)
-
-    //vs.setTimeout(vs.close(),3000);
-    
+    setTimeout(()=>
+        vs.close()
+    ,3000);
+ 
 }
