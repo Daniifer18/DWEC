@@ -2,7 +2,7 @@ let ventana;
 
 function abrir(){
 
-    let num = parseInt(Math.random()* 3);
+    let num = parseInt(Math.random()* 4);
 
 
     switch (num) {
