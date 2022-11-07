@@ -11,7 +11,9 @@ function abrirVentanaNueva(){
 
         v.moveTo(100,200);
 
-        v.scrollTo(0, v.innerHeight());
+	    v.onload = function scrollToBottom(){
+		    v.scrollTo(0, document.body.scrollHeight);
+        }
     }
 
 }
