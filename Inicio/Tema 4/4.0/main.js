@@ -65,6 +65,7 @@ function pintar(array,caso,delegacion,or1,or2){
     }
 
     array.sort(orden);
+    a.sort((a,b) => a.sueldo - b.sueldo);
 
     document.write("<p>Los sueldos de la delegacion de "+delegacion+" ordenados de "+or1+" a "+or2+" son:</p>");
 

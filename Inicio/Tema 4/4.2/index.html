@@ -5,8 +5,64 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio 4.2</title>
+    <style>
+        *{
+            margin: auto;
+        }
+        body{
+            background-color: lightblue;
+        }
+        h2,h3{
+            text-align: center;
+            font-size: 32px;
+        }
+        h3{
+            margin-top: 5%;
+        }
+    </style>
 </head>
 <body>
-    <script src="main.js"></script>
+    <script>
+
+        class Mascotas{
+
+            nombre;
+            cantidadComida;
+
+            constructor (nombre,cantidadComida){
+                this.nombre = nombre;
+                this.cantidadComida = cantidadComida;
+            }
+
+            imprimirDatos(){
+                document.write(`<h3>${this.nombre} consume ${this.cantidadComida} gramos de comida al dia</h3>`);
+            }
+        }
+
+        class MascotasComida extends Mascotas{
+
+            constructor(nombre,cantidadComida){
+                super(nombre,cantidadComida);
+            }
+
+            mascotaDias(bolsa = 3){
+                document.write(`<h2>La comida de ${this.nombre} va a durar ${Math.round(parseFloat((bolsa*1000)/this.cantidadComida)*100)/100} dias</h2><br><br>`);
+            }
+
+        }
+
+
+        const gato = new MascotasComida("Doraemon",350);
+        gato.imprimirDatos();
+        gato.mascotaDias(5);
+
+        const perro = new MascotasComida("Nevado",650);
+        perro.imprimirDatos();
+        perro.mascotaDias(10);
+
+        const hamster = new MascotasComida("Hamtaro",150);
+        hamster.imprimirDatos();
+        hamster.mascotaDias();
+    </script>
 </body>
 </html>
