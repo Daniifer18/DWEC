@@ -1,196 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <title>Juego Cartas</title>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <style>
-        :root {
-          --w: calc(70vw / 4);
-          --h: calc(70vh / 2);
-        }
-
-        * {
-          transition: all 0.5s;
-        }
-
-        body {
-          padding: 0;
-          margin: 0;
-          -webkit-perspective: 1000;
-          background-image: url("../Ej 2/img/fondo.jpg");
-          min-height: 100vh;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          text-align: center;
-          font-family: calibri;
-        }
-
-        h3{
-            background-color: white;
-        }
-
-        div {
-          display: inline-block;
-          margin: 10px;
-        }
-
-        .area-tarjeta,
-        .tarjeta,
-        .cara {
-          cursor: pointer;
-          width: var(--w);
-          min-width: 100px;
-          height: var(--h);
-        }
-
-        div > img {
-          width: var(--w);
-          height: var(--h);
-        }
-
-        .tarjeta {
-          position: relative;
-          transform-style: preserve-3d;
-          animation: iniciar 5s;
-        }
-
-        .cara {
-          position: absolute;
-          backface-visibility: hidden;
-          box-shadow: inset 0 0 0 5px white;
-          font-size: 500%;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        .trasera {
-          background-color: lightcyan;
-          transform: rotateY(180deg);
-        }
-
-        .superior {
-          background: linear-gradient(orange, darkorange);
-        }
-
-        .nuevo-juego {
-          cursor: pointer;
-          color: white;
-          background: linear-gradient(rgb(3, 140, 78), rgb(8, 110, 2));
-          padding: 20px;
-          border-radius: 50px;
-          border: rgb(204, 246, 221) 5px solid;
-          font-size: 130%;
-        }
-
-        @keyframes iniciar {
-
-            20%,
-            90% {
-                transform: rotateY(180deg);
+    <head>
+        <meta charset="UTF-8">
+        <title>Juego Cartas</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        <style>
+            :root {
+            --w: calc(70vw / 4);
+            --h: calc(70vh / 2);
             }
 
-            0%,
-            100% {
-                transform: rotateY(0deg);
+            * {
+            transition: all 0.5s;
             }
-        }
-    </style>
-</head>
 
-<body>
+            body {
+            padding: 0;
+            margin: 0;
+            -webkit-perspective: 1000;
+            background-image: url("../Ej 2/img/fondo.jpg");
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-family: calibri;
+            }
 
-    <h3><span id="fallos"></span></h3>
-    <div id="tablero">
-        
-    </div><br>
+            h3{
+                background-color: white;
+            }
 
-    <div class="nuevo-juego" onclick="generarTablero()">
-        Jugar de nuevo
-    </div>
+            div {
+            display: inline-block;
+            margin: 10px;
+            }
 
-    <script>
+            .area-tarjeta,
+            .tarjeta,
+            .cara {
+            cursor: pointer;
+            width: var(--w);
+            min-width: 100px;
+            height: var(--h);
+            }
 
-        let iconos = []
-        let selecciones = []
+            div > img {
+            width: var(--w);
+            height: var(--h);
+            }
 
-        generarTablero()
+            .tarjeta {
+            position: relative;
+            transform-style: preserve-3d;
+            animation: iniciar 5s;
+            }
 
-        function cargarIconos() {
-            iconos = [
+            .cara {
+            position: absolute;
+            backface-visibility: hidden;
+            box-shadow: inset 0 0 0 5px white;
+            font-size: 500%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            }
 
-                '<img src="../Ej 2/img/hamster.jpg" class="fas fa-star">',
-                '<img src="../Ej 2/img/mono.jpg" class="fas fa-star">',
-                '<img src="../Ej 2/img/perro1.jpg" class="fas fa-star">',
-                '<img src="../Ej 2/img/pinguinos.jpg" class="fas fa-star">',
-                '<img src="../Ej 2/img/shrek wazowski.jpeg" class="fas fa-star">',
-            ]
-        }
+            .trasera {
+            background-color: lightcyan;
+            transform: rotateY(180deg);
+            }
 
-        function generarTablero() {
-            cargarIconos()
-            selecciones = []
-            let tablero = document.getElementById("tablero")
-            let tarjetas = []
-            for (let i = 0; i < 10; i++) {
-                tarjetas.push(`
-                <div class="area-tarjeta" onclick="seleccionarTarjeta(${i})">
-                    <div class="tarjeta" id="tarjeta${i}">
-                        <div class="cara trasera" id="trasera${i}">
-                            ${iconos[0]}
-                        </div>
-                        <div class="cara superior">
-                            <img src="../Ej 2/img/poke.jpg"" class="far fa-question-circle">
-                        </div>
-                    </div>
-                </div>        
-                `)
-                if (i % 2 == 1) {
-                    iconos.splice(0, 1)
+            .superior {
+            background: linear-gradient(orange, darkorange);
+            }
+
+            .nuevo-juego {
+            cursor: pointer;
+            color: white;
+            background: linear-gradient(rgb(3, 140, 78), rgb(8, 110, 2));
+            padding: 20px;
+            border-radius: 50px;
+            border: rgb(204, 246, 221) 5px solid;
+            font-size: 130%;
+            }
+
+            @keyframes iniciar {
+
+                20%,
+                90% {
+                    transform: rotateY(180deg);
+                }
+
+                0%,
+                100% {
+                    transform: rotateY(0deg);
                 }
             }
-            tarjetas.sort(() => Math.random() - 0.5)
-            tablero.innerHTML = tarjetas.join(" ")
-        }
+        </style>
+    </head>
+    <body>
 
-        contador = 0;
+        <h3><span id="fallos"></span></h3>
+        <div id="tablero">
+            
+        </div><br>
 
-        function seleccionarTarjeta(i) {
-            let tarjeta = document.getElementById("tarjeta" + i)
-            if (tarjeta.style.transform != "rotateY(180deg)") {
-                tarjeta.style.transform = "rotateY(180deg)"
-                selecciones.push(i)
+        <div class="nuevo-juego" onclick="generarTablero()">
+            Jugar de nuevo
+        </div>
+
+        <script>
+
+            let iconos = []
+            let selecciones = []
+
+            generarTablero()
+
+            function cargarIconos() {
+                iconos = [
+
+                    '<img src="../Ej 2/img/hamster.jpg" class="fas fa-star">',
+                    '<img src="../Ej 2/img/mono.jpg" class="fas fa-star">',
+                    '<img src="../Ej 2/img/perro1.jpg" class="fas fa-star">',
+                    '<img src="../Ej 2/img/pinguinos.jpg" class="fas fa-star">',
+                    '<img src="../Ej 2/img/shrek wazowski.jpeg" class="fas fa-star">',
+                ]
             }
-            if (selecciones.length == 2) {
-                deseleccionar(selecciones)
+
+            function generarTablero() {
+                cargarIconos()
                 selecciones = []
-            }
-        }
-
-        function deseleccionar(selecciones) {
-            setTimeout(() => {
-                let trasera1 = document.getElementById("trasera" + selecciones[0])
-                let trasera2 = document.getElementById("trasera" + selecciones[1])
-                if (trasera1.innerHTML != trasera2.innerHTML) {
-                    let tarjeta1 = document.getElementById("tarjeta" + selecciones[0])
-                    let tarjeta2 = document.getElementById("tarjeta" + selecciones[1])
-                    tarjeta1.style.transform = "rotateY(0deg)"
-                    tarjeta2.style.transform = "rotateY(0deg)"
-                    document.getElementById("fallos").textContent = "Fallos:"+ ++contador;
-                }else{
-                    trasera1.style.background = "plum"
-                    trasera2.style.background = "plum"
+                let tablero = document.getElementById("tablero")
+                let tarjetas = []
+                for (let i = 0; i < 10; i++) {
+                    tarjetas.push(`
+                    <div class="area-tarjeta" onclick="seleccionarTarjeta(${i})">
+                        <div class="tarjeta" id="tarjeta${i}">
+                            <div class="cara trasera" id="trasera${i}">
+                                ${iconos[0]}
+                            </div>
+                            <div class="cara superior">
+                                <img src="../Ej 2/img/poke.jpg"" class="far fa-question-circle">
+                            </div>
+                        </div>
+                    </div>        
+                    `)
+                    if (i % 2 == 1) {
+                        iconos.splice(0, 1)
+                    }
                 }
-            }, 1000);
-        }
+                tarjetas.sort(() => Math.random() - 0.5)
+                tablero.innerHTML = tarjetas.join(" ")
+            }
 
-    </script>
+            contador = 0;
 
-</body>
+            function seleccionarTarjeta(i) {
+                let tarjeta = document.getElementById("tarjeta" + i)
+                if (tarjeta.style.transform != "rotateY(180deg)") {
+                    tarjeta.style.transform = "rotateY(180deg)"
+                    selecciones.push(i)
+                }
+                if (selecciones.length == 2) {
+                    deseleccionar(selecciones)
+                    selecciones = []
+                }
+            }
 
+            function deseleccionar(selecciones) {
+                setTimeout(() => {
+                    let trasera1 = document.getElementById("trasera" + selecciones[0])
+                    let trasera2 = document.getElementById("trasera" + selecciones[1])
+                    if (trasera1.innerHTML != trasera2.innerHTML) {
+                        let tarjeta1 = document.getElementById("tarjeta" + selecciones[0])
+                        let tarjeta2 = document.getElementById("tarjeta" + selecciones[1])
+                        tarjeta1.style.transform = "rotateY(0deg)"
+                        tarjeta2.style.transform = "rotateY(0deg)"
+                        document.getElementById("fallos").textContent = "Fallos:"+ ++contador;
+                    }else{
+                        trasera1.style.background = "plum"
+                        trasera2.style.background = "plum"
+                    }
+                }, 1000);
+            }
+
+        </script>
+
+    </body>
 </html>
