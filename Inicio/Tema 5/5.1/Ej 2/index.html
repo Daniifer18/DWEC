@@ -102,7 +102,7 @@
     </head>
     <body>
 
-        <h3><span id="fallos"></span></h3>
+        <h3><span id="fallos"></span>  <span id="aciertos"></span>   <span id="total"></span></h3>
         <div id="tablero">
             
         </div><br>
@@ -115,6 +115,11 @@
 
             let iconos = []
             let selecciones = []
+
+            let contador = 0;
+            let contadorA = 0;
+            let total = 0;
+
 
             generarTablero()
 
@@ -132,7 +137,13 @@
             function generarTablero() {
                 cargarIconos()
                 selecciones = []
-                let tablero = document.getElementById("tablero")
+                contador = 0;
+                document.getElementById("fallos").textContent = "Fallos:"+ contador;
+                contadorA = 0;
+                document.getElementById("aciertos").textContent = "Aciertos:"+ contadorA;
+                total = 0;
+                document.getElementById("total").textContent = "Total :"+ total;
+                let tablero = document.getElementById("tablero");
                 let tarjetas = []
                 for (let i = 0; i < 10; i++) {
                     tarjetas.push(`
@@ -155,7 +166,7 @@
                 tablero.innerHTML = tarjetas.join(" ")
             }
 
-            contador = 0;
+          
 
             function seleccionarTarjeta(i) {
                 let tarjeta = document.getElementById("tarjeta" + i)
@@ -179,9 +190,12 @@
                         tarjeta1.style.transform = "rotateY(0deg)"
                         tarjeta2.style.transform = "rotateY(0deg)"
                         document.getElementById("fallos").textContent = "Fallos:"+ ++contador;
+                        document.getElementById("total").textContent = "Total :"+ ++total;
                     }else{
                         trasera1.style.background = "plum"
                         trasera2.style.background = "plum"
+                        document.getElementById("aciertos").textContent = "Aciertos:"+ ++contadorA;
+                        document.getElementById("total").textContent = "Total :"+ ++total;
                     }
                 }, 1000);
             }
