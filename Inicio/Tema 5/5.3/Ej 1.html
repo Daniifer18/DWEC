@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        body{
+            height: 100vh;
+            background-color: #8EC5FC;
+            background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        h3{
+            text-align: center;
+        }
+        #centro{
+        border-radius: 5px black;
+        margin-top: 3%;
+        font-weight: 600;
+        }
+        #sub{
+            cursor: pointer;
+        }
+        .warnings{
+            text-align: center;
+            color: red;
+            margin: auto;
+            padding-top: 20x;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6" id="centro">
+                <div class="card">
+                    <div class="card-body" id="formulario">
+                        <form action="" method="get" id="form" class="">
+                            <h3>Formulario</h3>
+                            <label>Nombre:</label><br>
+                            <input type="text" name="nombre" id="nb" placeholder="Introduzca su nombre" required><br><br>
+                            <label>Apellidos:</label><br>
+                            <input type="text" name="apellidos" id="sn" placeholder="Introduzca sus apellidos"><br><br>
+                            <label>Elige un color:</label><br>
+                            Rojo: <input type="radio" name="color" id="r" value="red" onclick="cambiarFondo1()"><br>
+                            Naranja: <input type="radio" name="color" id="a" value="orange" onclick="cambiarFondo2()"><br>
+                            Verde: <input type="radio" name="color" id="v" value="green" onclick="cambiarFondo3()"><br><br>
+                            <div class="d-grid gap-3">
+                                <input type="submit" value="Enviar" class="btn btn-primary btn-block" id="sub">
+                            </div>
+                            <script>
+
+                                var enviar = document.getElementById("sub");
+                                
+                                
+                                enviar.addEventListener('click',function(){
+                                    var cadena = "";
+                                    var nb = document.getElementById("nb");
+                                    var surname = document.getElementById("sn");
+                                    var color = document.getElementsByName("color");
+
+                                    cadena += nb.value +" "+surname.value+" ";
+
+                                    for (let i = 0; i < color.length; i++) {
+                                        if(color[i].checked == true) cadena += color[i].value + " ";
+                                    }
+
+                                    alert(cadena);
+                                    
+                                })
+
+                
+                                var rojo = document.getElementById("r");
+                                var azul = document.getElementById("a");
+                                var verde = document.getElementById("v");
+                                var form = document.getElementById("form");
+
+                                function cambiarFondo1(){
+                                    form.style.background = rojo.value;
+                                }
+                                function cambiarFondo2(){
+                                    form.style.background = azul.value;
+                                }
+                                function cambiarFondo3(){
+                                    form.style.background = verde.value;
+                                }
+
+
+                            </script>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
+</body>
+</html>
