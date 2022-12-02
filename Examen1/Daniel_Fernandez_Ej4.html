@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+</head>
+<body>
+    <script>
+        var array = [];
+        var total = 0
+        var total1 = 0;
+        var total2 = 0;
+
+        for (let i = 0; i < 10; i++) {
+
+            do{
+                array[i] = parseInt(prompt("Introduzca un numero"));
+            }while(isNaN(array[i]));
+
+            if(array[i] >= 600  && array[i] < 2000 ){
+                total1 += array[i];
+            }else if(array[i] >= 2000){
+                total2 += array[i];
+            }
+            total += array[i];
+        }
+
+        document.write(`<h3>El valor de todos los elementos es ${total}</h3>`);
+        document.write(`<h3>El valor de los elementos mayores de 600 y menores de 2000 es ${total1}</h3>`);
+        document.write(`<h3>El valor de los elementos mayores de 2000 es ${total2}</h3>`);
+    </script>
+</body>
+</html>

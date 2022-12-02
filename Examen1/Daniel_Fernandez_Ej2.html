@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+<body>
+    <script>
+        class Jugador{
+
+            nombre;
+            edad;
+            ciudad;
+
+            constructor (nombre,edad,ciudad){
+                this.nombre = nombre;
+                this.edad = edad;
+                this.ciudad = ciudad;
+            }
+
+            mostrarValores(){
+                return (`Su nombre es ${this.nombre} tiene ${this.edad} años y vive en ${this.ciudad}`);
+            }
+        }
+
+        class Campeonato extends Jugador{
+
+            puntuacion;
+
+            constructor(nombre,edad,ciudad,puntuacion){
+                super(nombre,edad,ciudad);
+                this.puntuacion = puntuacion;
+            }
+
+            recibirPuntuacion(){
+                if(this.puntuacion > 50){
+                    document.write(`<h3>`+super.mostrarValores() + ` irá al campeonato</h3>`);
+                }else{
+                    document.write(`<h3>`+ super.mostrarValores() + ` no irá al campeonato</h3>`);
+                }
+            }
+
+        }
+
+        const jugador1 = new Campeonato("David",15,"Madrid",60);
+        const jugador2 = new Campeonato("Pepe",16,"Madrid",40);
+
+        jugador1.recibirPuntuacion();
+        jugador2.recibirPuntuacion();
+    </script>
+</body>
+</html>
