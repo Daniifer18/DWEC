@@ -25,7 +25,19 @@
                 document.body.style.background = "white";
             };
 
+            function colorNuevo(){
+                var array = [];
+
+                for (let i = 0; i < 3; i++) {
+                    
+                    array[i] = Math.round(Math.random() * 255);
+                    
+                }
+                return "rgb("+array[0]+","+array[1]+","+array[2]+")";
+            }
+
             function cambiarFondo(){
+                /*
                 let hastag;
                 let hexadecimal = "0123456789ABCDEF";
                 colorFinal = "#";
@@ -33,8 +45,8 @@
                 for(let i = 0; i < 6; i++){
                     colorFinal = colorFinal + hexadecimal[Math.floor(Math.random() * 16)];
                 }
-
-                document.body.style.background = colorFinal;
+                */
+                document.body.style.background = colorNuevo();
         
             }
         </script>
